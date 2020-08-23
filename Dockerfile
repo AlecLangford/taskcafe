@@ -17,4 +17,5 @@ RUN go run cmd/mage/main.go backend:genFrontend backend:genMigrations backend:bu
 FROM alpine:latest
 WORKDIR /root/
 COPY --from=backend /usr/src/app/dist/taskcafe .
+EXPOSE 3000
 CMD ["./taskcafe", "web"]
